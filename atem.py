@@ -264,12 +264,3 @@ class Atem:
             self.cmd_trans_pos(0,0,True)
         else:
             self.cmd_trans_pos(0,int((val_src/40.00)*9999))
-
-
-if __name__ == '__main__':
-    a = Atem()
-
-    a.connectToSwitcher(("192.168.10.1", 9910))
-    rseight.rsEight.evt_rseight_cmd_btn_changed.connect(a.on_btn_change)
-    rseight.rsEight.evt_rseight_bus_xpoint_changed.connect(a.on_btn_change)
-    rseight.rsEight.evt_rseight_tbar_value_changed.connect(a.on_tbar_change)

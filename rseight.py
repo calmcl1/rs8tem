@@ -38,6 +38,8 @@ class rsEight:
 
         self.evt_rseight_data_rx.connect(self.decode_data)
 
+        print "Setting up threaded loop"
+
         t = threading.Thread(target=self.start_threaded_loop)
         t.start()
 

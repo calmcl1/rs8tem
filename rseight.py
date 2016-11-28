@@ -115,5 +115,7 @@ class rsEight:
         for b in buttons:
             cmd += b
 
-        cmd = abs(~cmd)
-        self.send_command("~" + str(bus) + str(format(cmd, '02X')))
+
+        cmd = ~cmd & 0xFF
+
+        self.send_command("~" + str(bus) + hex(cmd)[2:])

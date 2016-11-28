@@ -118,4 +118,4 @@ class rsEight:
 
         cmd = ~cmd & 0xFF
 
-        self.send_command("~" + str(bus) + hex(cmd)[2:])
+        self.send_command("~" + str(bus) + str(format(cmd, '02X')))
